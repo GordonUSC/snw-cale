@@ -1,0 +1,888 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<meta name="theme-color" content="#E60012" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+
+<title>Mario Day · SNW Hollywood · Friday May 8, 2026 · for Cale + Son</title>
+<meta name="description" content="A mobile-first guide to maximum fun at Super Nintendo World Hollywood. From G to Cale and son, Friday May 8, 2026." />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="🍄 Mario Day — SNW Hollywood for Cale + Son" />
+<meta property="og:description" content="The plan, the bands, the soup, the easter eggs. Friday May 8, 2026." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bungee&family=Inter:wght@400;500;600;700;800;900&family=Press+Start+2P&display=swap" />
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23FBD000' rx='10'/%3E%3Ctext x='50%25' y='62%25' text-anchor='middle' fill='%23222' font-family='Bungee,Impact' font-size='38'%3E?%3C/text%3E%3C/svg%3E" />
+
+<style>
+  :root {
+    --red: #E60012;
+    --red-dark: #B5000E;
+    --blue: #049CD8;
+    --blue-dark: #0277A8;
+    --gold: #FBD000;
+    --gold-dark: #D4AE00;
+    --green: #43B047;
+    --green-dark: #2E8030;
+    --pipe: #1E843D;
+    --sky: #6EC8F2;
+    --sky-bg: #B5E3F8;
+    --cream: #FFF8E7;
+    --paper: #FFFCF2;
+    --ink: #18181B;
+    --ink-2: #3F3F46;
+
+    --f-display: "Bungee", Impact, "Helvetica Neue Condensed", sans-serif;
+    --f-pixel: "Press Start 2P", monospace;
+    --f-body: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: var(--f-body);
+    font-size: 17px;
+    line-height: 1.55;
+    color: var(--ink);
+    background: var(--cream);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  h1, h2, h3, h4 { margin: 0; }
+  p { margin: 0 0 1em; }
+  ol, ul { padding: 0; margin: 0; list-style: none; }
+  a { color: inherit; }
+  ::selection { background: var(--gold); color: var(--ink); }
+
+  /* HERO */
+  .hero {
+    background:
+      radial-gradient(circle at 20% 20%, rgba(255,255,255,.4), transparent 50%),
+      linear-gradient(180deg, var(--sky) 0%, var(--sky-bg) 60%, var(--cream) 100%);
+    padding: 56px 24px 80px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    top: 30px; left: 50%;
+    transform: translateX(-50%);
+    width: 90vw;
+    max-width: 320px;
+    height: 30px;
+    background:
+      radial-gradient(circle at 16% 50%, #fff 0 13%, transparent 14%),
+      radial-gradient(circle at 50% 50%, #fff 0 13%, transparent 14%),
+      radial-gradient(circle at 84% 50%, #fff 0 13%, transparent 14%);
+    opacity: .85;
+    filter: blur(0.5px);
+  }
+  .hero__eyebrow {
+    font-family: var(--f-pixel);
+    font-size: 9px;
+    letter-spacing: .08em;
+    color: var(--red);
+    margin-bottom: 18px;
+    line-height: 1.5;
+  }
+  .hero__title {
+    font-family: var(--f-display);
+    font-size: clamp(58px, 17vw, 120px);
+    line-height: .9;
+    color: var(--red);
+    text-shadow:
+      4px 4px 0 var(--ink),
+      4px 4px 0 0 var(--ink);
+    -webkit-text-stroke: 2px var(--ink);
+    margin-bottom: 12px;
+    letter-spacing: -0.01em;
+  }
+  .hero__sub {
+    font-size: clamp(17px, 4vw, 21px);
+    font-weight: 600;
+    color: var(--ink-2);
+    max-width: 28ch;
+    margin: 0 auto 28px;
+  }
+  .hero__chips {
+    display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;
+    margin-top: 12px;
+  }
+  .chip {
+    background: #fff;
+    border: 2px solid var(--ink);
+    border-radius: 999px;
+    padding: 7px 14px;
+    font-weight: 700;
+    font-size: 13px;
+    box-shadow: 3px 3px 0 var(--ink);
+  }
+  .chip--red { background: var(--red); color: #fff; }
+  .chip--gold { background: var(--gold); }
+  .chip--green { background: var(--green); color: #fff; }
+  .chip--blue { background: var(--blue); color: #fff; }
+
+  /* MARQUEE */
+  .marquee {
+    background: var(--red);
+    color: #fff;
+    border-block: 4px solid var(--ink);
+    overflow: hidden;
+    padding: 12px 0;
+    font-family: var(--f-display);
+    letter-spacing: .04em;
+  }
+  .marquee__track {
+    display: inline-flex;
+    gap: 36px;
+    white-space: nowrap;
+    animation: marquee 28s linear infinite;
+    font-size: 19px;
+  }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  /* CONTAINER */
+  .wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding-inline: 22px;
+  }
+  section {
+    padding-block: 64px;
+  }
+  section.alt {
+    background: var(--paper);
+  }
+  section.dark {
+    background: var(--ink);
+    color: var(--cream);
+  }
+  section.dark p { color: rgba(255, 248, 231, .85); }
+
+  /* SECTION HEAD */
+  .eyebrow {
+    font-family: var(--f-pixel);
+    font-size: 10px;
+    letter-spacing: .12em;
+    color: var(--red);
+    margin-bottom: 14px;
+  }
+  .dark .eyebrow { color: var(--gold); }
+
+  h2 {
+    font-family: var(--f-display);
+    font-size: clamp(34px, 8vw, 52px);
+    line-height: 1;
+    margin-bottom: 16px;
+    letter-spacing: -0.01em;
+  }
+  h2 em {
+    font-style: normal;
+    background: linear-gradient(180deg, transparent 60%, var(--gold) 60%);
+    padding-inline: 2px;
+  }
+
+  .lede {
+    font-size: 19px;
+    font-weight: 500;
+    color: var(--ink-2);
+    max-width: 56ch;
+    margin-bottom: 30px;
+  }
+  .dark .lede { color: rgba(255, 248, 231, .9); }
+
+  /* GLANCE */
+  .glance {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-top: 24px;
+  }
+  .glance__row {
+    display: grid;
+    grid-template-columns: 70px 1fr;
+    gap: 16px;
+    align-items: baseline;
+    padding: 14px 18px;
+    background: #fff;
+    border: 2.5px solid var(--ink);
+    border-radius: 12px;
+    box-shadow: 4px 4px 0 var(--ink);
+  }
+  .glance__time {
+    font-family: var(--f-pixel);
+    font-size: 11px;
+    color: var(--red);
+    line-height: 1.3;
+  }
+  .glance__what {
+    font-weight: 700;
+    color: var(--ink);
+  }
+  .glance__what em {
+    font-style: normal;
+    color: var(--ink-2);
+    font-weight: 500;
+  }
+
+  /* MORNING STEPS */
+  .steps {
+    display: grid;
+    gap: 18px;
+    counter-reset: step;
+    margin-top: 24px;
+  }
+  .step {
+    counter-increment: step;
+    background: #fff;
+    border: 3px solid var(--ink);
+    border-radius: 18px;
+    box-shadow: 6px 6px 0 var(--ink);
+    padding: 22px 22px 22px 80px;
+    position: relative;
+  }
+  .step::before {
+    content: counter(step, decimal-leading-zero);
+    position: absolute;
+    left: 18px; top: 22px;
+    width: 48px; height: 48px;
+    background: var(--gold);
+    border: 3px solid var(--ink);
+    border-radius: 8px;
+    display: grid;
+    place-items: center;
+    font-family: var(--f-display);
+    font-size: 18px;
+    box-shadow:
+      inset -3px -3px 0 var(--gold-dark),
+      inset 3px 3px 0 #FFEC85;
+  }
+  .step h3 {
+    font-family: var(--f-display);
+    font-size: 22px;
+    margin-bottom: 6px;
+    color: var(--red);
+  }
+  .step .when {
+    font-family: var(--f-pixel);
+    font-size: 10px;
+    color: var(--ink-2);
+    margin-bottom: 8px;
+  }
+  .step p { margin: 0; }
+  .step strong { color: var(--red-dark); }
+
+  /* CARDS */
+  .cards {
+    display: grid;
+    gap: 14px;
+    margin-top: 22px;
+  }
+  @media (min-width: 600px) {
+    .cards { grid-template-columns: 1fr 1fr; }
+  }
+  .card {
+    background: #fff;
+    border: 3px solid var(--ink);
+    border-radius: 16px;
+    box-shadow: 5px 5px 0 var(--ink);
+    padding: 22px;
+  }
+  .card.gold { background: var(--gold); }
+  .card.green { background: #E6F7E6; }
+  .card.blue { background: #E5F5FC; }
+  .card.red { background: #FFE5E7; }
+  .card h3 {
+    font-family: var(--f-display);
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+  .card .label {
+    font-family: var(--f-pixel);
+    font-size: 9px;
+    letter-spacing: .08em;
+    color: var(--red);
+    margin-bottom: 8px;
+  }
+  .card p:last-child { margin-bottom: 0; }
+  .card strong { color: var(--red-dark); }
+
+  /* CHARACTER PICKER */
+  .picker {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 18px;
+    margin-bottom: 12px;
+  }
+  .pick {
+    background: #fff;
+    border: 3px solid var(--ink);
+    border-radius: 14px;
+    padding: 14px 8px 12px;
+    text-align: center;
+    box-shadow: 4px 4px 0 var(--ink);
+    position: relative;
+  }
+  .pick__cap {
+    width: 60px; height: 36px;
+    margin: 0 auto 8px;
+    border-radius: 60px 60px 8px 8px;
+    border: 2.5px solid var(--ink);
+    position: relative;
+  }
+  .pick__cap--mario { background: var(--red); }
+  .pick__cap--mario::before {
+    content: "M";
+    position: absolute;
+    inset: 0;
+    display: grid; place-items: center;
+    background: #fff;
+    width: 18px; height: 18px;
+    border-radius: 50%;
+    border: 2px solid var(--ink);
+    color: var(--red);
+    font-family: var(--f-display);
+    font-size: 11px;
+    margin: auto;
+    top: 7px;
+  }
+  .pick__cap--yoshi { background: var(--green); }
+  .pick__cap--yoshi::before {
+    content: "🦖";
+    position: absolute;
+    inset: 0;
+    display: grid; place-items: center;
+    font-size: 18px;
+  }
+  .pick__cap--peach { background: #FFC0CB; }
+  .pick__cap--peach::before {
+    content: "👑";
+    position: absolute;
+    inset: 0;
+    display: grid; place-items: center;
+    font-size: 16px;
+  }
+  .pick__name {
+    font-family: var(--f-display);
+    font-size: 13px;
+    line-height: 1.1;
+  }
+  .pick__who {
+    font-size: 11px;
+    color: var(--ink-2);
+    margin-top: 4px;
+  }
+  .pick.is-pick {
+    background: var(--gold);
+    transform: rotate(-1deg);
+  }
+
+  /* TIPS */
+  .tips {
+    display: grid;
+    gap: 12px;
+    margin-top: 20px;
+  }
+  .tip {
+    display: grid;
+    grid-template-columns: 36px 1fr;
+    gap: 14px;
+    align-items: start;
+    padding: 14px 16px;
+    background: rgba(255, 255, 255, .04);
+    border: 2px dashed rgba(255, 255, 255, .25);
+    border-radius: 12px;
+  }
+  .light .tip { background: #fff; border-style: solid; border-color: var(--ink); border-width: 2.5px; box-shadow: 3px 3px 0 var(--ink); }
+  .tip__icon {
+    font-size: 24px;
+    line-height: 1;
+    text-align: center;
+  }
+  .tip h4 {
+    font-family: var(--f-display);
+    font-size: 16px;
+    margin-bottom: 4px;
+  }
+  .tip p { margin: 0; font-size: 15px; line-height: 1.5; }
+
+  /* EASTER EGGS */
+  .eggs {
+    display: grid;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  .egg {
+    background: var(--gold);
+    color: var(--ink);
+    border: 3px solid var(--ink);
+    border-radius: 12px;
+    padding: 14px 18px;
+    box-shadow: 4px 4px 0 var(--ink);
+    transform: rotate(-0.3deg);
+  }
+  .egg:nth-child(even) { transform: rotate(0.4deg); background: #FFEC85; }
+  .egg h4 {
+    font-family: var(--f-display);
+    font-size: 15px;
+    margin-bottom: 4px;
+  }
+  .egg p { margin: 0; font-size: 14px; line-height: 1.4; }
+
+  /* THE BIG ONE */
+  .bigone {
+    background:
+      radial-gradient(ellipse at 30% 20%, rgba(255, 217, 61, .35), transparent 50%),
+      radial-gradient(ellipse at 80% 80%, rgba(73, 156, 216, .3), transparent 50%),
+      var(--ink);
+    color: var(--cream);
+    padding: 80px 24px;
+    text-align: center;
+  }
+  .bigone h2 {
+    color: var(--gold);
+    font-size: clamp(36px, 8vw, 56px);
+    line-height: 1.05;
+    max-width: 18ch;
+    margin: 0 auto 18px;
+  }
+  .bigone p {
+    max-width: 32ch;
+    margin: 0 auto;
+    font-size: 19px;
+    color: rgba(255, 248, 231, .9);
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--cream);
+    text-align: center;
+    padding: 36px 24px 56px;
+    color: var(--ink-2);
+  }
+  .star {
+    font-size: 30px;
+    margin-bottom: 8px;
+    display: block;
+  }
+  .signoff {
+    font-family: var(--f-pixel);
+    font-size: 9px;
+    letter-spacing: .08em;
+    color: var(--ink-2);
+  }
+
+  /* COIN BURSTS */
+  .coins {
+    text-align: center;
+    margin: 12px 0;
+    font-size: 22px;
+    letter-spacing: 14px;
+    line-height: 1;
+    color: var(--gold-dark);
+  }
+
+  /* PIPE DIVIDER */
+  .pipe {
+    width: 80px;
+    height: 36px;
+    margin: 24px auto;
+    background: var(--green);
+    border: 3px solid var(--ink);
+    border-radius: 8px;
+    position: relative;
+    box-shadow: inset -4px -4px 0 var(--green-dark), inset 4px 4px 0 #6CCF6F;
+  }
+  .pipe::before {
+    content: "";
+    position: absolute;
+    inset: 5px 8px 16px 8px;
+    background: var(--pipe);
+    border-radius: 4px;
+    border: 2px solid var(--ink);
+    border-bottom: 0;
+  }
+
+  /* QUESTION BLOCK */
+  .qblock {
+    width: 56px;
+    height: 56px;
+    margin: 24px auto;
+    background: var(--gold);
+    border: 3px solid var(--ink);
+    border-radius: 6px;
+    box-shadow:
+      inset -4px -4px 0 var(--gold-dark),
+      inset 4px 4px 0 #FFEC85;
+    display: grid;
+    place-items: center;
+    font-family: var(--f-display);
+    font-size: 28px;
+    color: var(--ink);
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero__eyebrow">EARLY ACCESS · FRI MAY 8 · LA</div>
+  <h1 class="hero__title">MARIO<br/>DAY</h1>
+  <p class="hero__sub">Maximum-fun guide to Super Nintendo World, Hollywood. For Cale + son. From G.</p>
+  <div class="hero__chips">
+    <span class="chip chip--red">🍄 Mario Kart</span>
+    <span class="chip chip--green">🦖 Yoshi</span>
+    <span class="chip chip--gold">🪙 Bands</span>
+    <span class="chip chip--blue">🎬 Studio Tour</span>
+  </div>
+</header>
+
+<!-- MARQUEE -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__track">
+    <span>MARIO KART</span><span>·</span>
+    <span>YOSHI</span><span>·</span>
+    <span>POWER-UP BANDS</span><span>·</span>
+    <span>MUSHROOM SOUP</span><span>·</span>
+    <span>STUDIO TOUR</span><span>·</span>
+    <span>BUTTERBEER</span><span>·</span>
+    <span>STAR POWER ⭐</span><span>·</span>
+    <span>MARIO KART</span><span>·</span>
+    <span>YOSHI</span><span>·</span>
+    <span>POWER-UP BANDS</span><span>·</span>
+    <span>MUSHROOM SOUP</span><span>·</span>
+    <span>STUDIO TOUR</span><span>·</span>
+    <span>BUTTERBEER</span><span>·</span>
+    <span>STAR POWER ⭐</span><span>·</span>
+  </div>
+</div>
+
+<!-- AT A GLANCE -->
+<section>
+  <div class="wrap">
+    <div class="eyebrow">§ 01 — AT A GLANCE</div>
+    <h2>The day, on <em>one screen</em>.</h2>
+    <p class="lede">Eight to eight. Mario before the line, mushroom soup before noon, Hogsmeade at dusk. Anything else is bonus.</p>
+    <div class="glance">
+      <div class="glance__row">
+        <div class="glance__time">7:30 AM</div>
+        <div class="glance__what">Park & arrive · <em>Curious George lot, ride escalators up to Upper Lot</em></div>
+      </div>
+      <div class="glance__row">
+        <div class="glance__time">8:00 AM</div>
+        <div class="glance__what">Early Access opens · <em>walk briskly to Super Nintendo World, hard left at the warp pipe</em></div>
+      </div>
+      <div class="glance__row">
+        <div class="glance__time">8:10 AM</div>
+        <div class="glance__what">Mario Kart Bowser's Challenge · <em>before any line builds</em></div>
+      </div>
+      <div class="glance__row">
+        <div class="glance__time">8:35 AM</div>
+        <div class="glance__what">Yoshi's Adventure · <em>5-min walk, slow recovery ride</em></div>
+      </div>
+      <div class="glance__row">
+        <div class="glance__time">9:00 AM</div>
+        <div class="glance__what">Power-Up Bands + block challenges · <em>chase keys for Bowser Jr. boss fight</em></div>
+      </div>
+      <div class="glance__row">
+        <div class="glance__time">11:30 AM</div>
+        <div class="glance__what">Toadstool Cafe lunch · <em>walk-up, mushroom soup is the move</em></div>
+      </div>
+      <div class="glance__row">
+        <div class="glance__time">12:45 PM</div>
+        <div class="glance__what">Studio Tour · <em>LA-only, mandatory for Cale's lane</em></div>
+      </div>
+      <div class="glance__row">
+        <div class="glance__time">2:00 PM</div>
+        <div class="glance__what">Lower Lot — Jurassic World, Transformers, Mummy</div>
+      </div>
+      <div class="glance__row">
+        <div class="glance__time">4:30 PM</div>
+        <div class="glance__what">Wizarding World — Forbidden Journey + Hippogriff</div>
+      </div>
+      <div class="glance__row">
+        <div class="glance__time">6:30 PM</div>
+        <div class="glance__what">Hogsmeade lit up + Butterbeer · <em>the dusk photo moment</em></div>
+      </div>
+      <div class="glance__row">
+        <div class="glance__time">8:00 PM</div>
+        <div class="glance__what">Park closes, dinner at City Walk · <em>or out before the rush</em></div>
+      </div>
+    </div>
+    <div class="coins">🪙 🪙 🪙 🪙 🪙</div>
+  </div>
+</section>
+
+<!-- THE MORNING -->
+<section class="alt">
+  <div class="wrap">
+    <div class="eyebrow">§ 02 — THE MORNING (8:00 AM SHARP)</div>
+    <h2>Mario Kart, <em>before the line</em>.</h2>
+    <p class="lede">The first 45 minutes inside SNW are the only time Mario Kart is a 15-min wait instead of an hour-plus. Nail the morning, the rest of the day relaxes.</p>
+
+    <ol class="steps">
+      <li class="step">
+        <div class="when">7:30 AM · 405 → Universal Center Drive</div>
+        <h3>Park smart.</h3>
+        <p>Curious George lot ($30 general, $50 preferred). Avoid the Frankenstein lot — it's farther. Ride up the four escalators to the Upper Lot. Bathrooms at the top.</p>
+      </li>
+      <li class="step">
+        <div class="when">8:00 AM · gates open</div>
+        <h3>Walk, don't run, but <strong>do not browse</strong>.</h3>
+        <p>Past Despicable Me. Past the Simpsons. Hard left into the Super Nintendo World tunnel. The warp-pipe sound effect plays as you enter — that's the moment. The kid will lose it. Cale will too.</p>
+      </li>
+      <li class="step">
+        <div class="when">8:10 AM · first 30 min</div>
+        <h3>Mario Kart: Bowser's Challenge.</h3>
+        <p>Right at the entrance to the land. <strong>Ride this first.</strong> The augmented-reality goggles + the cart + the Bowser fight = unrepeatable. The line builds from 15 min to 60+ within an hour of regular open.</p>
+      </li>
+      <li class="step">
+        <div class="when">8:35 AM</div>
+        <h3>Yoshi's Adventure.</h3>
+        <p>5-minute walk through the land, past Princess Peach's castle. Slow, outdoor, lets the brain reset after Mario Kart's intensity. Spot the eggs hidden along the track — the kid will count.</p>
+      </li>
+      <li class="step">
+        <div class="when">9:00 AM · post-rides</div>
+        <h3>Power-Up Bands. Activate.</h3>
+        <p>$40 each at the entrance store. Pair with the Universal Studios app (download tonight, save the headache). Walk the land hitting <strong>Question Blocks</strong>, <strong>POW Blocks</strong>, and the <strong>Key Challenges</strong> (Goomba Crazy Crank, Piranha Plant Nap Mishap, Thwomp Panel Panic). Three keys → unlock the Bowser Jr. Shadow Showdown final boss. <em>This is the kid's quest.</em></p>
+      </li>
+      <li class="step">
+        <div class="when">11:00 AM · before the rush</div>
+        <h3>Mario Kart, second ride.</h3>
+        <p>If the line is still under 30 min, do it again. The AR mechanics click on the second ride — you understand the steering, you start hitting more shells. <em>Trust me on this one.</em></p>
+      </li>
+    </ol>
+    <div class="qblock" aria-hidden="true">?</div>
+  </div>
+</section>
+
+<!-- POWER UP BANDS -->
+<section>
+  <div class="wrap">
+    <div class="eyebrow">§ 03 — POWER-UP BANDS</div>
+    <h2>The bands are <em>the secret game</em>.</h2>
+    <p class="lede">$40 per band. Connect via QR to the Universal app. The bands track every block hit, every coin grabbed, every key earned, and your final score on the leaderboards. They are the difference between visiting SNW and <em>playing</em> SNW.</p>
+
+    <div class="picker" aria-label="Character picks">
+      <div class="pick is-pick">
+        <div class="pick__cap pick__cap--mario"></div>
+        <div class="pick__name">MARIO</div>
+        <div class="pick__who">the kid</div>
+      </div>
+      <div class="pick">
+        <div class="pick__cap pick__cap--yoshi"></div>
+        <div class="pick__name">YOSHI</div>
+        <div class="pick__who">Cale</div>
+      </div>
+      <div class="pick">
+        <div class="pick__cap pick__cap--peach"></div>
+        <div class="pick__name">PEACH</div>
+        <div class="pick__who">G.</div>
+      </div>
+    </div>
+
+    <div class="cards">
+      <div class="card gold">
+        <div class="label">PRO MOVE</div>
+        <h3>Buy them <em>at the entrance</em>.</h3>
+        <p>The store right inside SNW. Don't wait. Every minute the band is on your wrist is a minute it's tracking coins. Bands paid for the entry fee in our group-of-three's collective brag-a-thon by lunchtime.</p>
+      </div>
+      <div class="card green">
+        <div class="label">FOR THE KID</div>
+        <h3>Three keys = boss fight.</h3>
+        <p>The three Key Challenges scattered around the land each give a key. Three keys unlocks <strong>Bowser Jr. Shadow Showdown</strong> — the final-boss interactive battle inside Bowser Jr.'s Shadow. <em>That's the trophy moment of the day.</em></p>
+      </div>
+      <div class="card blue">
+        <div class="label">CALE'S LANE</div>
+        <h3>The production design <em>thinks like he does</em>.</h3>
+        <p>Universal Creative + Nintendo built the AR/IRL hybrid layer we've been waiting on for 15 years. The blocks aren't decorative — they're networked sensors. Cale will clock the seamlessness in the first ten minutes.</p>
+      </div>
+      <div class="card red">
+        <div class="label">CHARGING</div>
+        <h3>Power bank, in your pocket.</h3>
+        <p>The Universal app + AR + photos drains an iPhone in under three hours. <strong>Bring a power bank.</strong> If you don't have one, City Walk has rentals (FuelRod, $30, returnable at any park).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOADSTOOL -->
+<section class="alt">
+  <div class="wrap">
+    <div class="eyebrow">§ 04 — TOADSTOOL CAFE</div>
+    <h2>The food is <em>actually good</em>.</h2>
+    <p class="lede">Most theme-park food is theater. Toadstool is theater <em>and</em> dinner. Walk-up after 11:30 AM on a weekday is doable. Don't aim for noon-on-the-dot — the line is 45 min then.</p>
+
+    <div class="cards">
+      <div class="card gold">
+        <div class="label">ORDER THIS</div>
+        <h3>Mushroom Soup Bread Bowl.</h3>
+        <p>The headliner. Real wild mushroom soup, served in a bowl made of bread. <strong>Get this.</strong> Skip the burger. The soup is the only review most fans agree on, full stop.</p>
+      </div>
+      <div class="card red">
+        <div class="label">FOR THE KID</div>
+        <h3>Princess Peach Cupcake.</h3>
+        <p>A pink-frosted strawberry cupcake with the Peach crown on top. The 10-year-old's photo op of the day. <em>Send it to mom.</em></p>
+      </div>
+      <div class="card blue">
+        <div class="label">SHARE</div>
+        <h3>Question Block Tiramisù.</h3>
+        <p>A perfect square of tiramisù, gold-dusted, with the question mark in cocoa. Photographable. Edible. Three forks.</p>
+      </div>
+      <div class="card green">
+        <div class="label">SOLID HITS</div>
+        <h3>Mario Bacon Cheeseburger · Piranha Plant Caprese.</h3>
+        <p>Mario's burger comes on a red bun with white-spot pickles (it's a mushroom). Piranha Plant Caprese is mozzarella + tomato + basil with a green sauce. Both better than they have any right to be at a theme park.</p>
+      </div>
+    </div>
+
+    <div class="pipe" aria-hidden="true"></div>
+  </div>
+</section>
+
+<!-- AFTER SNW -->
+<section>
+  <div class="wrap">
+    <div class="eyebrow">§ 05 — AFTER SNW</div>
+    <h2>The rest of <em>Universal</em>.</h2>
+    <p class="lede">SNW takes 3-4 hours including lunch. You have most of a day left. Here's the order that works.</p>
+
+    <div class="cards">
+      <div class="card blue">
+        <div class="label">12:45 PM · MANDATORY</div>
+        <h3>🎬 Studio Tour.</h3>
+        <p>The LA-only thing. King Kong 360 3D, Fast & Furious finale, the Psycho house, the Bates motel, the JAWS pool, the back-lot streets. <strong>Cale's lane.</strong> Sit on the right side for the best Fast & Furious view. 60 minutes round-trip.</p>
+      </div>
+      <div class="card green">
+        <div class="label">2:00 PM · LOWER LOT</div>
+        <h3>🦖 Jurassic World → Transformers → Mummy.</h3>
+        <p>Take the four escalators down. Jurassic World gets you wet (towel in the car). Transformers is the technical masterpiece. Mummy is a real coaster — the 10-year-old will love it. <strong>Single-rider lines</strong> for Transformers + Mummy if you split up.</p>
+      </div>
+      <div class="card red">
+        <div class="label">4:30 PM · WIZARDING WORLD</div>
+        <h3>🪄 Forbidden Journey + Hippogriff.</h3>
+        <p>Forbidden Journey is the headline ride (motion-base + projection — Cale will respect the engineering). Flight of the Hippogriff is a kid coaster, fast turnaround. <strong>Order a Butterbeer at the Three Broomsticks</strong> while you wait — the cold one, not the hot.</p>
+      </div>
+      <div class="card gold">
+        <div class="label">6:30 PM · DUSK</div>
+        <h3>🌅 Hogsmeade lit up.</h3>
+        <p>The lighting sequence at sunset is the photo of the trip. Stand under the Hogwarts Castle near closing time. Quiet, cooler air, the kid is tired in the best way. Send mom the picture.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRO TIPS -->
+<section class="dark">
+  <div class="wrap">
+    <div class="eyebrow">§ 06 — PRO TIPS</div>
+    <h2>The <em>small things</em>.</h2>
+    <p class="lede">Tiny details that make the day 30% better.</p>
+    <div class="tips">
+      <div class="tip">
+        <div class="tip__icon">⚡</div>
+        <div>
+          <h4>Universal Express Pass: maybe.</h4>
+          <p>$150-200 per person on top of the ticket. Cuts your wait time roughly in half across the whole park (skips Mario Kart on a single-use entry). Worth it on a busy day; not necessary on a Friday in early May. Decide on the spot if lines look long.</p>
+        </div>
+      </div>
+      <div class="tip">
+        <div class="tip__icon">💧</div>
+        <div>
+          <h4>Refill stations everywhere.</h4>
+          <p>Bring an empty bottle. Fountains throughout the park. LA in May is mild but the sun matters. Sunscreen the kid before you leave the car.</p>
+        </div>
+      </div>
+      <div class="tip">
+        <div class="tip__icon">📸</div>
+        <div>
+          <h4>Photopass photographers.</h4>
+          <p>Roving Universal photographers near the Mario meet-and-greet. Say yes. Free QR-code download afterward via the app. The 10-year-old next to Mario is a frame.</p>
+        </div>
+      </div>
+      <div class="tip">
+        <div class="tip__icon">🍿</div>
+        <div>
+          <h4>Skip the Walking Dead Attraction.</h4>
+          <p>Too dark, too gory for a 10-year-old. Pass. (Also it's just a haunt, not a ride.)</p>
+        </div>
+      </div>
+      <div class="tip">
+        <div class="tip__icon">🚗</div>
+        <div>
+          <h4>Leave by 5, or stay until 8.</h4>
+          <p>Universal exits onto the 101 at peak rush hour 5–7 PM. Either get out early, or commit to dinner at City Walk and roll out at 8 when traffic eases. Don't try to thread it.</p>
+        </div>
+      </div>
+      <div class="tip">
+        <div class="tip__icon">🎟️</div>
+        <div>
+          <h4>One-day = 8 hours easy.</h4>
+          <p>Pace, don't sprint. The day is good if SNW + Studio Tour land clean. Everything after that is bonus.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EASTER EGGS -->
+<section class="light">
+  <div class="wrap">
+    <div class="eyebrow">§ 07 — EASTER EGGS</div>
+    <h2>For the <em>10-year-old</em>.</h2>
+    <p class="lede">The stuff the casual visitor walks past. Find these and the band collection-meter goes berserk.</p>
+    <div class="eggs">
+      <div class="egg">
+        <h4>🟢 Pipe at the entrance plays the warp-pipe sound.</h4>
+        <p>Stand still for ten seconds and listen. The audio is on a 30-second loop. Best moment of the day at zero cost.</p>
+      </div>
+      <div class="egg">
+        <h4>👻 Boo Hide-and-Seek (band-only).</h4>
+        <p>Inside Princess Peach's castle, scan the Boo wallpaper. The band unlocks a mini-game in the app where Boos hide and you find them. Five Boos = 100 coins.</p>
+      </div>
+      <div class="egg">
+        <h4>🦖 Yoshi sounds when you scan blocks.</h4>
+        <p>The Yoshi character bands play the Yoshi voice on every block hit. Mario plays Mario's. Cale will know within two blocks whose band is whose.</p>
+      </div>
+      <div class="egg">
+        <h4>🍄 Toad's mushroom hat photo-op.</h4>
+        <p>Outside the cafe entrance. Free, fast, the kid gets a photo with a giant mushroom hat. <em>Use it.</em></p>
+      </div>
+      <div class="egg">
+        <h4>🎵 SMW theme remix in the warp tunnel.</h4>
+        <p>The instrumental as you walk in is Koji Kondo's Super Mario World overworld theme, slowed down 18 BPM. If Cale's a music person, that's the production note.</p>
+      </div>
+      <div class="egg">
+        <h4>⭐ Hidden 8-bit Mario.</h4>
+        <p>Behind the Mario hat statue near the Mario meet-and-greet, there's a tiny 8-bit pixel-art Mario painted into the wall. Find it. Photo it. Brag.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THE BIG ONE -->
+<section class="bigone">
+  <h2>The 10-year-old will remember <em style="color: #fff; background: linear-gradient(180deg, transparent 60%, var(--red) 60%); padding-inline: 6px;">this day</em> for the rest of his life.</h2>
+  <p>The mushroom soup will be a meme by next Tuesday. The Mario Kart finish-line photo is the framed-print frame. The dusk shot of the kid in front of Hogwarts is what mom screenshots. <strong>Send everything to her.</strong></p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="star">⭐</span>
+  <p>Built by <strong>G.</strong> for Cale + son · Friday May 8, 2026</p>
+  <p class="signoff">PRESS START</p>
+</footer>
+
+</body>
+</html>
